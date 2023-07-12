@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app-deployment
-  namespace: namespace
+  namespace: wmannie
   labels:
     app: app
 spec:
