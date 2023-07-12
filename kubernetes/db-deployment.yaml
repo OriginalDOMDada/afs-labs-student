@@ -23,6 +23,6 @@ spec:
         - secretRef:
             name: db-secret
         name: db-deployment
-        image: registry.dev.afsmtddso.com/wmannie-harbor-project/db@sha256:6a73ccc4bcb1b317b2e7168695baeb6bd641e7e3e3d2d63d14a6865a7e5b14ef
+        image: registry.dev.afsmtddso.com/wmannie-harbor-project/db:beca1a4-595d81c
         ports:
         - containerPort: 5432

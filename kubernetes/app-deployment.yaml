@@ -23,6 +23,6 @@ spec:
         - secretRef:
             name: db-secret
         name: app-deployment
-        image: registry.dev.afsmtddso.com/wmannie-harbor-project/app@sha256:c3b6321c33123ffd99c0105720977f995facf035e64a4cb20676563570d98572
+        image: registry.dev.afsmtddso.com/wmannie-harbor-project/app:beca1a4-595d81c
         ports:
         - containerPort: 5000
