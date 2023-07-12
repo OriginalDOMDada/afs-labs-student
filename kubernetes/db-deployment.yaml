@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
+  name: db-deployment
   namespace: namespace
   labels:
-    app: app
+    app: db
 spec:
   replicas: 1
   strategy:
@@ -12,17 +12,17 @@ spec:
   minReadySeconds: 20
   selector:
     matchLabels:
-      app: app
+      app: db
   template:
     metadata:
       labels:
-        app: app
+        app: db
     spec:
       containers:
       - envFrom:
         - secretRef:
             name: db-secret
-        name: app-deployment
-        image: registry.dev.afsmtddso.com/wmannie-harbor-project/app@sha256:c3b6321c33123ffd99c0105720977f995facf035e64a4cb20676563570d98572
+        name: db-deployment
+        image: registry.dev.afsmtddso.com/wmannie-harbor-project/db@sha256:6a73ccc4bcb1b317b2e7168695baeb6bd641e7e3e3d2d63d14a6865a7e5b14ef
         ports:
-        - containerPort: 5000
+        - containerPort: 5432
