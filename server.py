@@ -222,7 +222,11 @@ def show_cart():
     """Query session for cart contents and display results"""
     
     # send flag for feature toggle to cart page
-    return render_template("cart.html")
+    if os.environ["LOCATION_FEATURE_ENABLED"] == "True":
+        pickups = db.session.query(Pickup).filter(Pickup.pickup_id > 1).all()
+        return render_template("locations.html", pickups=pickups)
+    else:
+        return render_template("coming-soon.html")
 
 
 @app.route('/cart', methods=['POST'])
